@@ -32,47 +32,47 @@
 					"subCategoryList": [{
 						"id": "2",
 						"name": "女装",
-						image: "../../static/female/female.jpg"
+						image: "../../static/categories/female.jpg"
 					}, {
-						"id": "11",
+						"id": "3",
 						"name": "男装",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/TB1eyUmS7voK1RjSZFwXXciCFXa.png_290x10000.jpg_.webp"
+						image: "../../static/categories/male.jfif"
 					}, {
-						"id": "12",
+						"id": "4",
 						"name": "穿搭",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN01bxyQcD1CETxd3uDMG_!!2-item_pic.png_290x10000.jpg_.webp"
+						image: "../../static/categories/chuanda.jfif"
 					}]
 				}, {
-					"id": "2",
-					"name": "测试一级菜单2",
+					"id": "5",
+					"name": "家具 家饰 家纺",
 					"subCategoryList": [{
+						"id": "6",
+						"name": "家具",
+						image: "../../static/categories/jiaju.jpg"
+					}, {
 						"id": "7",
-						"name": "测试二级菜单2-1",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN01JME8QL1hn3yJjFmsC_!!2-item_pic.png_290x10000.jpg_.webp"
+						"name": "家饰",
+						image: "../../static/categories/jiafang.jfif",
 					}, {
 						"id": "8",
-						"name": "测试二级菜单2-3",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN01SiNmgu1HJ84rwnlPw_!!2-item_pic.png_290x10000.jpg_.webp"
-					}, {
-						"id": "9",
-						"name": "测试二级菜单2-2",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN011KQrV8LEdxrFt7i_!!2468631159.png_290x10000.jpg_.webp"
+						"name": "家纺",
+						image: "../../static/categories/jiashi.jfif",
 					}]
 				}, {
-					"id": "1",
-					"name": "测试一级菜单3",
+					"id": "9",
+					"name": "运动 户外 乐器",
 					"subCategoryList": [{
-						"id": "4",
-						"name": "测试二级菜单3-1",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN01pAbhJz1vmW7x7y6ni_!!0-item_pic.jpg_290x10000Q75.jpg_.webp"
+						"id": "10",
+						"name": "运动",
+						image: "../../static/categories/yundong.jpg",
 					}, {
-						"id": "5",
-						"name": "查询测试专用",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/TB1xYioVG6qK1RjSZFmXXX0PFXa.png_290x10000.jpg_.webp"
+						"id": "11",
+						"name": "户外",
+						image: "../../static/categories/huwai.jfif",
 					}, {
-						"id": "6",
-						"name": "测试二级菜单3-2",
-						image: "http://gw.alicdn.com/bao/uploaded/i1/2091067499/O1CN01hhMSW41GOKwzymt98_!!2935350612.jpg_290x10000Q75.jpg_.webp"
+						"id": "12",
+						"name": "乐器",
+						image: "../../static/categories/yueqi.jfif",
 					}]
 				}],
 				categoryNameActive: 0, //当前选中active
@@ -177,7 +177,7 @@
 	}
 
 	.categoryNameActive {
-		background: rgba(0, 86, 67, .3);
+		background:#C40000;
 	}
 
 	.scroll-Y {
@@ -202,7 +202,7 @@
 	}
 
 	.categoryListBox {
-		width: 145rpx;
+		width: 445rpx;
 		border: 1px solid #CCCCCC;
 		margin-right: 15rpx;
 		float: left;
@@ -210,13 +210,13 @@
 	}
 
 	.categoryListBox image {
-		width: 145rpx;
-		height: 145rpx;
+		width: 445rpx;
+		height: 200rpx;
 	}
 
 	.categoryListName_line {
 		height: 30rpx;
-		background: rgba(0, 126, 96, 0.7);
+		background: #C40000;
 		width: 8rpx;
 		float: left;
 		margin-top: 35rpx;
