@@ -34,6 +34,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/product-list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "navigationStyle":"custom"
+            }
+            
+        }
     ],
 	"globalStyle": {
 			"navigationBarTextStyle": "black",

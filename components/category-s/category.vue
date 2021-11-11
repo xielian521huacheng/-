@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="content">
 		<scroll-view scroll-y="true" class="SV_categoryTitle">
 			<view class="categoryTitle">
 				<view class="categoryName" v-for="(item,index) in categoryList" :key="index" :class="categoryNameActive == index?'categoryNameActive':''"
@@ -30,52 +30,52 @@
 					"id": "1",
 					"name": "女装 男装 穿搭",
 					"subCategoryList": [{
-						"id": "2",
+						"id": "10",
 						"name": "女装",
 						image: "../../static/categories/female.jpg"
 					}, {
-						"id": "3",
+						"id": "11",
 						"name": "男装",
 						image: "../../static/categories/male.jfif"
 					}, {
-						"id": "4",
+						"id": "12",
 						"name": "穿搭",
 						image: "../../static/categories/chuanda.jfif"
 					}]
 				}, {
-					"id": "5",
+					"id": "2",
 					"name": "家具 家饰 家纺",
 					"subCategoryList": [{
-						"id": "6",
+						"id": "7",
 						"name": "家具",
 						image: "../../static/categories/jiaju.jpg"
 					}, {
-						"id": "7",
+						"id": "8",
 						"name": "家饰",
 						image: "../../static/categories/jiafang.jfif",
 					}, {
-						"id": "8",
+						"id": "9",
 						"name": "家纺",
 						image: "../../static/categories/jiashi.jfif",
 					}]
 				}, {
-					"id": "9",
+					"id": "3",
 					"name": "运动 户外 乐器",
 					"subCategoryList": [{
-						"id": "10",
+						"id": "4",
 						"name": "运动",
 						image: "../../static/categories/yundong.jpg",
 					}, {
-						"id": "11",
+						"id": "5",
 						"name": "户外",
 						image: "../../static/categories/huwai.jfif",
 					}, {
-						"id": "12",
+						"id": "6",
 						"name": "乐器",
 						image: "../../static/categories/yueqi.jfif",
 					}]
 				}],
-				categoryNameActive: 0, //当前选中active
+				categoryNameActive: 3, //当前选中active
 				scrollTop: 0, //scroll-top
 				scrollVal: 0, //滑动的值
 				scrollStatus: true, //点击状态，是否能点击

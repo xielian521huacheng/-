@@ -1,34 +1,80 @@
 <template>
 	<view>
-		<view>
-			<header class="home-header wrap" :class="{ active: headerScroll }">
-			    <!-- 点击搜索框跳转到分类页 -->
-				<router-link tag="i" to="./category">
-					<image src="../../static/index/more-line.png" style="width: 55rpx; height: 55rpx; margin-top: 20rpx;"></image>
-				</router-link>
-				<!-- 搜索框 -->
-				<div class="header-search" style="margin-top: -95rpx; margin-left: 70rpx;">
-					<span class="app-name">衣饰商城</span>
-					<image src="../../static/index/search.png" style="width: 55rpx; height: 55rpx;"></image>
-					<router-link tag="span" class="search-title" to="./product-list">山河无恙，人间皆安</router-link>
-				</div>
-				<div style="margin-top: -88rpx;">
-					<router-link class="login" tag="span" to="./login" v-if="!isLogin">
-						登录
-					</router-link>
-					<router-link class="login" tag="span" to="./user" v-else>
-						<van-icon name="manager-o" />
-					</router-link>
-				</div>
-			</header> 
-		</view>
+		<view class="home-header wrap" :class="{ active: headerScroll }">
+			<!-- 点击搜索框跳转到分类页 -->
+			<image @click="gotoCategory" src="../../static/index/more-line.png" style="width: 50rpx; height: 50rpx; margin-top: 20rpx;"></image>
+				
+			<!-- 搜索框 -->
+			<view class="header-search" style="margin-top: -95rpx; margin-left: 70rpx;">
+				<text class="app-name">楼楼商城</text>
+				<image src="../../static/index/search.png" style="width: 55rpx; height: 55rpx;"></image>
+				<text class="search-title" @click="gotoList">山河无恙，人间皆安</text>
+			</view>
+			<view style="margin-top: -88rpx;">
+				<navigator class="login" target="text" url="../cart/cart" v-if="!isLogin">
+					登录
+				</navigator>
+				<navigator class="login" tagget="text" url="../user/user" v-else>
+					<!-- <icon name="manager-o" /> -->
+				</navigator>
+			</view>
+		</view> 
 		<swiper :list="swiperList"></swiper>
-		<div class="category-list">
-		  <div v-for="item in categoryList" v-bind:key="item.categoryId">
-		    <img :src="item.imgUrl">
-		    <span>{{item.name}}</span>
-		  </div>
-		</div>
+		<!-- 展示图片 -->
+		<view class="image-view1">
+			<view>
+				<image class="img-small" src="../../static/index/jiaoyou.png">
+					<h2 class="reduce">楼楼交友</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/jiazheng.png">
+					<h2 class="reduce">楼楼家政</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/shuichan1.png">
+					<h2 class="reduce">楼楼水产</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/zuche.png">
+					<h2 class="reduce">楼楼租车</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/pin.png">
+					<h2 class="reduce">楼楼招聘</h2>
+				</image>
+			</view>
+		</view>
+		<view class="image-view2">
+			<view>
+				<image class="img-small" src="../../static/index/ershou.png">
+					<h2 class="reduce">楼楼二手</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/chongwu.png">
+					<h2 class="reduce">楼楼宠物</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/wm.png">
+					<h2 class="reduce">楼楼外卖</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/dianqi.png">
+					<h2 class="reduce">楼楼电器</h2>
+				</image>
+			</view>
+			<view>
+				<image class="img-small" src="../../static/index/czcz.png">
+					<h2 class="reduce">楼楼充值</h2>
+				</image>
+			</view>
+		</view>
 		<view class="good">
 		    <header class="good-header">热门商品</header>
 		    <view class="good-box">
@@ -53,13 +99,13 @@
 		          <span class="price">￥ {{item.sellingPrice}}</span>
 		        </view>
 		      </view>
-		      <!-- <div class="good-item" v-for="item in recommends" :key="item.goodsId" @click="goToDetail(item)">
+		      <div class="good-item" v-for="item in recommends" :key="item.goodsId" @click="goToDetail(item)">
 		        <img :src="`//lmall.xinfeng.site${item.goodsCoverImg}`" alt="">
 		        <div class="good-desc">
 		          <div class="title">{{ item.goodsName }}</div>
 		          <div class="price">¥ {{ item.sellingPrice }}</div>
 		        </div>
-		      </div> -->
+		      </div>
 		    </view>
 		</view>
 	</view>
@@ -71,50 +117,7 @@
 		data() {
 			return {
 				swiperList: [],
-				categoryList: [
-					{
-						name: '楼楼交友',
-						imgUrl: '//s.yezgea02.com/1598679532890/jiaoyou.png',
-						categoryId: 100001
-					}, {
-						name: '楼楼家政',
-						imgUrl: '//s.yezgea02.com/1598679532890/jiazheng.png',
-						categoryId: 100003
-					}, {
-						name: '楼楼水产',
-						imgUrl: '//s.yezgea02.com/1598679734813/shuichan1.png',
-						categoryId: 100002
-					}, {
-						name: '楼楼租车',
-						imgUrl: '//s.yezgea02.com/1598679532890/zuche.png',
-						categoryId: 100004
-					}, {
-						name: '楼楼招聘',
-						imgUrl: '//s.yezgea02.com/1598679792590/pin.png',
-						categoryId: 100005
-					}, {
-						name: '楼楼二手',
-						imgUrl: '//s.yezgea02.com/1598679853415/ershou.png',
-						categoryId: 100006
-					}, {
-						name: '楼楼宠物',
-						imgUrl: '//s.yezgea02.com/1598679532890/chongwu.png',
-						categoryId: 100007
-					}, {
-						name: '楼楼外卖',
-						imgUrl: '//s.yezgea02.com/1598679905787/wm.png',
-						categoryId: 100008
-					}, {
-						name: '楼楼电器',
-						imgUrl: '//s.yezgea02.com/1598680199443/dianqi.png',
-						categoryId: 100009
-					}, {
-						name: '楼楼充值',
-						imgUrl: '//s.yezgea02.com/1598680264015/czcz.png',
-						categoryId: 1000010
-					}
-				],
-				sLogin: false,
+				isLogin: false,
 				headerScroll: false,
 				hots: [],
 				newGoodses: [],
@@ -128,7 +131,16 @@
 
 		},
 		methods: {
-
+			gotoCategory() {
+				uni.switchTab({
+					url:"../category/category"
+				})
+			},
+			gotoList() {
+				uni.navigateTo({
+					url:"./product-list"
+				})
+			}
 		}
 	}
 </script>
@@ -144,17 +156,18 @@
     font-size: 15px;
     color: #fff;
     z-index: 10000;
+	margin-top: 60rpx;
 }
 .header-search {
     display: flex;
     line-height: 20px;
-    padding: 5px 0;
+    padding: 3px 0;
     color: #232326;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
 }
 .app-name {
-    padding: 0 10px;
+    padding: 2px 10px;
     color:  #c40000;
     font-size: 20px;
     font-weight: bold;
@@ -181,23 +194,32 @@
 .text {
 	margin-left: -120rpx;
 }
-.category-list {
-    display: flex;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-bottom: 13px;
-    div {
-      display: flex;
-      flex-direction: column;
-      width: 20%;
-      text-align: center;
-      img {
-        .wh(40px, 40px);
-        margin: 13px auto 8px auto;
-      }
-    }
-  }
+.image-view1 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+.image-view2 {
+	margin-top: 30rpx;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+.img-small {
+	height: 100rpx;
+	width: 100rpx;
+}
+.reduce {
+	font-size: 24rpx;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20rpx;
+}
 .good {
     .good-header {
       background: #f9f9f9;
