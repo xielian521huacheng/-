@@ -11,8 +11,8 @@
             "path" : "pages/user/user",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "navigationStyle":"custom"
+                "navigationBarTitleText": "我的",
+                "navigationStyle":""
             }
             
         }
@@ -20,8 +20,8 @@
             "path" : "pages/cart/cart",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "navigationStyle":"custom"
+                "navigationBarTitleText": "购物车",
+                "navigationStyle":""
             }
             
         }
