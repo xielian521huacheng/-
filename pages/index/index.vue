@@ -19,7 +19,22 @@
 				</navigator>
 			</view>
 		</view> 
-		<swiper :list="swiperList"></swiper>
+		<!-- 轮播图 -->
+		<swiper class="swiper" :autoplay="true" :interval="2000" :duration="500" :circular="true"
+			indicator-dots="true" indicator-active-color="red" indicator-color="white">
+			<swiper-item>
+				<image class="img-swiper" src="../../static/index/01.jpg"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="img-swiper" src="../../static/index/02.jpg"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="img-swiper" src="../../static/index/03.jpg"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="img-swiper" src="../../static/index/04.jpg"></image>
+			</swiper-item>
+		</swiper>
 		<!-- 展示图片 -->
 		<view class="image-view1">
 			<view>
@@ -112,20 +127,15 @@
 </template>
 
 <script>
-	import swiper from '@/components/user/Swiper'
 	export default {
 		data() {
 			return {
-				swiperList: [],
 				isLogin: false,
 				headerScroll: false,
 				hots: [],
 				newGoodses: [],
 				recommends: [],
 			}
-		},
-		components: {
-			swiper
 		},
 		onLoad() {
 
@@ -146,7 +156,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import '../../common/style/mixin';
+@import '../../common/style/mixin';
 .home-header {
     position: fixed;
     left: 0;
@@ -167,7 +177,7 @@
     border-radius: 20px;
 }
 .app-name {
-    padding: 2px 10px;
+    padding: 2px 15px;
     color:  #c40000;
     font-size: 20px;
     font-weight: bold;
@@ -180,7 +190,7 @@
 }
 .login {
     color:  #c40000;
-	margin-left: 600rpx;
+	margin-left: 620rpx;
 }
 .van-icon-manager-o {
     font-size: 20px;
@@ -193,6 +203,19 @@
 }
 .text {
 	margin-left: -120rpx;
+}
+.swiper {
+	margin-left: 15rpx;
+	border-radius: 10rpx;
+	margin-top: 160rpx;
+	height: 300rpx;
+	width: 95%;
+}
+.img-swiper {
+	width: 100%;
+	height: 300rpx;
+	align-items: center;
+	border-radius: 10rpx
 }
 .image-view1 {
 	display: flex;
