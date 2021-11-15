@@ -97,7 +97,6 @@
 <script>
 import Tabs from '../../components/uni-tabs/tabs.vue'
 import TabPane from '../../components/uni-tabs/tabPane.vue'
-// import uniNavBar from '../../components/uni-nav-bar/uni-nav-bar.vue';
 export default {
 	data() {
 		return {
