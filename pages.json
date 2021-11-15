@@ -51,10 +51,19 @@
             
         }
         ,{
-            "path" : "pages/user/order",
+            "path" : "pages/user/my-order",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/account-manage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "账号管理",
                 "enablePullDownRefresh": false
             }
             

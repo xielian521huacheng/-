@@ -10,7 +10,7 @@
 			<uni-grid :column="2" :square="false">
 				<uni-grid-item @click="goOrder1">
 					<view align="center" style="margin-top: 10%;margin-bottom: 10%;">
-					<image src="../../static/user/my-list.png" class="list-img"></image>
+					<image src="../../static/user/my-order.png" class="list-img"></image>
 					<view>我的订单</view>	
 					</view>
 				</uni-grid-item>
