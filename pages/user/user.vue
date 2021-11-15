@@ -1,26 +1,26 @@
 <template>
 	<view>
 		<view class="bg" align="center">
-			<image class="profile-photo" src="../../static/user/photo-null.png" @click=""></image>
+			<image class="profile-photo" src="../../static/user/photo-null.png" @click="Login"></image>
 
 			<view style="margin: 10px;color: #FFFFFF;">id:</view>
 			<view style="color: #FFFFFF;">个性签名:</view>
 		</view>
 		<view>
 			<uni-grid :column="2" :square="false">
-				<uni-grid-item @change="goTo('order')">
+				<uni-grid-item @click="goOrder1">
 					<view align="center" style="margin-top: 10%;margin-bottom: 10%;">
 					<image src="../../static/user/my-list.png" class="list-img"></image>
 					<view>我的订单</view>	
 					</view>
 				</uni-grid-item>
-				<uni-grid-item @change="goTo('order')">
+				<uni-grid-item @change="goOrder">
 					<view align="center" style="margin-top: 10%;margin-bottom: 10%;">
 					<image src="../../static/user/account-manage.png" class="list-img"></image>
 					<view>账号管理</view>	
 					</view>
 				</uni-grid-item>
-				<uni-grid-item @change="goTo('order')">
+				<uni-grid-item @change='goOrder(e)'>
 					<view align="center" style="margin-top: 10%;margin-bottom: 10%;">
 					<image src="../../static/user/address-manage.png" class="list-img"></image>
 					<view>地址管理</view>	
@@ -44,9 +44,45 @@ export default {
 	},
 
 	methods: {
+		Login() {
+			uni.navigateTo({
+				url: '/pages/user/login'
+			});
+		},
+		goOrder1() {
+			uni.navigateTo ({
+				url:'pages/user/order'
+			})
+		},
+	// 	goOrder(e){
+	// 	    console.log(e)
+	// 	    if(e.index==0){
+	// 	      uni.switchTab({
+		      	
+	// 	      });
+	// 	    };
+	// 		if(e.index==1){
+	// 		  uni.navigateTo({
+	// 		      url:'./order'
+			      
+	// 		  });
+	// 		};
+	// 		if(e.index==2){
+	// 		  uni.navigateTo({
+	// 		      url: "/pages/user/order"
+			      
+	// 		  });
+	// 		};
+	// 		if(e.index==3){
+	// 		  uni.navigateTo({
+	// 		      url: "/pages/user/order"
+			      
+	// 		  });
+	// 		};
 		
-	}
-};
+	// }
+},
+}
 </script>
 
 <style>
